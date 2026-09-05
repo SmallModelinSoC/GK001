@@ -7,7 +7,7 @@ Repo policy — read first
 GK001 ships with a production NPU runtime. We publish parameters, tools, and results — we do not publish operator / kernel source code. Every model card and guide in this organization follows the same rule. See Why isn't operator source code public? for the rationale and what we do make available.
 
 1. What is GK001
-[TBD — 2–4 sentence public summary, e.g.: GK001 is a single-chip edge-AI SoC designed around one job: running real-time voice pipelines (wake word → ASR → LLM → TTS) entirely on-device, with no cloud dependency, no microphone audio leaving the device, and deterministic millisecond-scale latency.]
+GK001 is a single-chip edge-AI SoC designed around one job: running real-time voice pipelines (wake word → ASR → LLM → TTS) entirely on-device, with no cloud dependency, no microphone audio leaving the device, and deterministic millisecond-scale latency.
 
 Target applications (non-exhaustive):
 
@@ -23,24 +23,17 @@ Privacy-constrained environments (medical, legal, defense-adjacent, home)
 All figures below are from the Public Parameter Checklist — the single source of truth for what this organization publishes about the silicon. Any number you see elsewhere in this org traces back to this table.
 
 Module	Public parameter	Value
-NPU	Peak compute INT8 INT16 FP16	[TBD]
-NPU	Supported quantization	[TBD] (e.g., INT8 INT4 FP16 / BF16)
-NPU	Supported operator coverage	[TBD] (published as a capability list only — no implementation details)
-CPU	Architecture cores frequency	[TBD]
-Memory	DDR type max capacity bandwidth	[TBD]
-Memory	On-chip SRAM	[TBD]
-Storage	eMMC UFS NOR	[TBD]
-Audio	Audio front-end capability	[TBD] (mic arrays, codec, AEC/NS support at feature level)
-Video	Encode / decode	[TBD]
-Camera	MIPI-CSI / ISP	[TBD]
-Display	Interfaces	[TBD]
-I/O	USB PCIe Ethernet SDIO UART I²C SPI / GPIO	[TBD]
-Security	Secure boot crypto engines TRNG	[TBD]
-Power	Typical run / standby	[TBD]
-Package	Package size operating temperature / lifetime	[TBD]
-Software	OS & BSP runtime toolchain	[TBD] (see §3)
+NPU	Peak compute INT8&FP16
+NPU	Supported quantization	INT8 INT4 FP16
+NPU	Supported operator coverage	 (published as a capability list only — no implementation details)
+CPU	Architecture cores frequency	200MHz
+Memory	DDR type max capacity bandwidth	
+Memory	On-chip SRAM	512MByte
+Audio	Audio front-end capability	 (mic arrays, codec, AEC/NS support at feature level)
+I/O	USB PCIe Ethernet SDIO UART I²C SPI / GPIO	
+Power	Typical run / standby	
 3. Software stack (public summary)
-[TBD — one paragraph per layer once approved, e.g.: Linux BSP · NPU runtime with C/Python API · ONNX conversion & quantization toolchain · model zoo of pre-adapted models …]
+Linux BSP · NPU runtime with C/Python API · ONNX conversion & quantization toolchain · model zoo of pre-adapted models
 
 4. What this repository is for — model adaptation
 This is the "chip adaptation" discussion hub. You can:
@@ -68,14 +61,13 @@ FAQ	Common questions, including disclosure policy
 Contributing	How to contribute (reports, docs, requests)
 Security	Reporting vulnerabilities
 6. Roadmap (public view)
-[TBD — e.g.: Q4 2026 — first verified model pack …]
-
+Update soon.
 7. Contact & community
 Discussions: GK001/Discussions
 
-Contact email: [TBD — decide public vs. private]
+Contact email: Gkslm2016@gmail.com
 
-Commercial / NDA inquiries (samples, datasheet, evaluation kit): [TBD]
+Commercial / NDA inquiries (samples, datasheet, evaluation kit): yes
 
 8. License
 Documentation in this repository is licensed under CC-BY-4.0 unless stated otherwise; sample code (where present) is licensed under Apache-2.0. Model files retain their upstream licenses. Operator source code is not part of this organization by design.
